@@ -1,0 +1,16 @@
+public boolean isValid (Object... params) {
+  boolean isValid = true;
+  for (Object param : params) {
+      if (param == null) {
+          isValid = false;
+          break;
+      } else {
+          if (param instanceof Collection && ((Collection) param).isEmpty()
+                  || param instanceof String && ((String) param).trim().isEmpty()) {
+              isValid = false;
+              break;
+          }
+      }
+  }
+  return isValid;
+}
